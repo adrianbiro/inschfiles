@@ -90,11 +90,8 @@ def main():
     if args.about:
         get_program_info()
     elif args.clear:
-        if os.path.exists(path_for_db):  # FIXME For some reason, it still gives True even if there are no files.
-            shutil.rmtree(path_for_db)
-            print("Files removed.")
-        else:
-            print("There are no files to remove.")
+        shutil.rmtree(path_for_db)
+        print("Files removed.")
     elif args.diff:
         num_of_files = len(os.listdir(path_for_db))
         if num_of_files >= 2:
